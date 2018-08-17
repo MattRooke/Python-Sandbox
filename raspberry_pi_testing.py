@@ -2,6 +2,7 @@
 
 
 def main():
+    """Gets login info"""
     user_name = input("Enter your Raspberry Pi user name:")
     user_pass = input("Enter your Raspberry Pi password:")
     if user_name != "" and user_pass != "":
