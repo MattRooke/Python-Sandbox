@@ -1,14 +1,22 @@
 """For data analysis in data science"""
 
+from statistics import median
+
+
 def main():
-    """gets data list/set"""
+    """gets data set(list) and prints relevant information"""
     user_input = (input("Enter the list of numbers separated by a space:"))
     data_set = list(map(int, user_input.split(" ")))
-    print(data_set)
+    print("Input: {}".format(data_set))
+    data_set = order_set(data_set)
+    print("Sorted: {}".format(data_set))
+    print("Values = {}".format(len(data_set)))
     minimum = find_minimum(data_set)
     maximum = find_maximum(data_set)
     data_range = find_range(minimum, maximum)
-    print("Min = {}\nMax = {}\nRange = {}".format(minimum, maximum, data_range))
+    mean = find_mean(data_set)
+    median_value = find_median(data_set)
+    print("Min = {}\nMax = {}\nRange = {}\nMean = {}\nMedian = {}".format(minimum, maximum, data_range, mean, median_value))
 
 
 def find_minimum(data):
@@ -23,10 +31,27 @@ def find_maximum(data):
     return minimum_of_set
 
 
-def find_range(low, high):
+def find_range(minimum, maximum):
     """finds the range of the data set"""
-    difference = high - low
+    difference = maximum - minimum
     return difference
+
+
+def order_set(data):
+    """Orders data set from lowest to highest"""
+    data_set = sorted(data)
+    return data_set
+
+
+def find_mean(data):
+    """finds the average of the data set"""
+    mean = sum(data) / len(data)
+    return mean
+
+
+def find_median(data):
+    median_value = median(data)
+    return median_value
 
 
 main()
