@@ -1,0 +1,17 @@
+from classes import TacoUser
+
+
+class Team:
+
+    def __init__(self):
+        self.users = []
+
+    def add(self, user):
+        self.users.append(user)
+
+
+if __name__ == "__main__":
+
+    t1 = Team()
+    u1 = TacoUser("Matt")
+    print(t1)
