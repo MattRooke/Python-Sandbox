@@ -6,7 +6,7 @@ from statistics import median
 def main():
     """gets data set(list) and prints relevant information"""
     user_input = (input("Enter the list of numbers separated by a space:"))
-    data_set = list(map(int, user_input.split(" ")))
+    data_set = list(map(float, user_input.split(" ")))
     print("Input: {}".format(data_set))
     data_set = order_set(data_set)
     print("Sorted: {}".format(data_set))
